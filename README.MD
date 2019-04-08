@@ -27,6 +27,10 @@ JQuery nous sert à manipuler des éléments de la page HTML : les modifier, en 
 Afin de faire une opération sur un élément, nous devons être en capacité de dire en Javascript comment le sélectionner : c'est le but des sélecteurs.
 
 1. Il existe trois principaux types de sélecteurs en JQuery, lesquels ?
+-selecteur par nom  ex : $('p')
+-selecteur par ID ex : $('#some-id')
+-selecteur par class : $('.some-class') 
+
 2. Dans le répertoire exo-2, vous trouverez une page HTML qui utilise la librairie Bootstrap. Dans le fichier `script.js`, écrivez des sélecteurs permettant de sélectionner les éléments suivants ( un sélecteur par ligne ) :
 Par exemple, si je dis sélectionner tous les éléments `h4` de la page, le sélecteur associé est : `$('h4')`.
 	1. Sélectionner le titre du blog : "John's Blog".
