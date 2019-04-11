@@ -4,14 +4,73 @@
 <head>
     <meta charset="utf-8">
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
 </head>
 
 <body>
     <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading text-align-center">ton choix</div>
+                    <div class="panel-body">
+                        <div id=userChoice></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading text-align-center">choix ordinateur</div>
+                    <div class="panel-body">
+                            <div id=getcomputerChoice></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading text-align-center">resultat</div>
+                    <div class="panel-body">
+                            <div id=resultat></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading text-align-center">rock</div>
+                    <div class="panel-body">
+                        <img src="caillou.jpg" class="img-responsive" style="width:100%" alt="Image">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-danger">
+                    <div class="panel-heading">scissors</div>
+                    <div class="panel-body">
+                        <img src="cisaux.jpg" class="img-responsive" style="width:100%" alt="Image">
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-success">
+                    <div class="panel-heading">paper</div>
+                    <div class="panel-body">
+                        <img src="papier.jpg" class="img-responsive" style="width:100%" alt="Image">
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
+    <br>
+    <script src="scriptL.js"></script>
 </body>
+<!--<script src="scriptV.js"></script>-->
+
+
 
 </html>
