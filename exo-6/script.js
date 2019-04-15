@@ -9,7 +9,6 @@ click = () => {
         let mail = $('#InputEmail').val();
         let pass = $('#InputPassword').val();
         isCheck(mail, pass)
-
     })
 }
 
