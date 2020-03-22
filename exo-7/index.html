@@ -1,53 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
-    <title>The tableau</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.0.min.js"
-        integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Exercice 7</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="DATA.js"></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        <h2>The tableau</h2>
 
-        <nav class="row navbar navbar-light bg-light">
-            <input class="form-control col-md-2" id="search" type="search" placeholder="Search" aria-label="Search">
-        </nav>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Index</th>
-                    <th>ID </th>
-                    <th>Email</th>
-                    <th>firstName <i id='first' class="fas fa-sort"></i></th>
-                    <th>lastName <i id='last'class="fas fa-sort"></i></th>
-                    <th>NumberPhone</th>
-                </tr>
-            </thead>
-            <tbody>
-
-            </tbody>
-        </table>
-
-        <nav aria-label="Page navigatio"></nav>
-        <div class="d-flex justify-content-center">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-
-                </ul>
-            </nav>
+<header class="container bg-white text-center fixed sticky-top">
+    <h1>Contacts</h1>
+    <nav>
+    </nav>
+    <div class="d-flex justify-content-between">
+        <div>
+            <button type="button" class="btn btn-default" id="newButton">
+                <i class="fa fa-pencil" style="font-size:24px"></i>
+            </button>
+            <button type="button" class="btn btn-default" id="deleteButton" disabled>
+                <i class="fa fa-trash" style="font-size:24px"></i>
+            </button>
         </div>
-
-        <ul id="pagination" class="pagination-sm"></ul>
-        <script src="DATA.js"></script>
-        <script src="script.js"></script>
+        <div>
+            <label><input type="text" class="form-control" id="searchInput"></label>
+            <button type="button" class="btn btn-default" id="searchButton">
+                <i class="fa fa-search" style="font-size:24px"></i>
+            </button>
+            <button type="button" class="btn btn-default" id="downloadButton">
+                <i class="fa fa-download" style="font-size:24px"></i>
+            </button>
+            <button type="button" class="btn btn-default" id="refreshButton">
+                <i class="fa fa-refresh" style="font-size:24px"></i>
+            </button>
+        </div>
+    </div>
+</header>
+<div class="container text-center">
+    <table class="table table-striped" id="contact">
+        <thead>
+        <tr>
+            <th></th>
+            <th id="id">N° <i class="fa fa-sort"></i></th>
+            <th id="lastname">Nom <i class="fa fa-sort"></i></th>
+            <th id="firstname">Prénom <i class="fa fa-sort"></i></th>
+            <th id="email">Email <i class="fa fa-sort"></i></th>
+            <th id="phone">Téléphone <i class="fa fa-sort"></i></th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+<div class="align-items-center mask my-auto">
+    <form id="addForm" class="container my-auto">
+        <div class="card my-auto">
+            <div class="card-header">
+                <h2 class="text-center">Ajouter un contact</h2>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="firstnameInput">Prénom : </label>
+                    <input type="text" name="firstname" id="firstnameInput" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastnameInput">Nom : </label>
+                    <input type="text" name="lastname" id="lastnameInput" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="genderInput">Genre : </label>
+                    <select id="genderInput" class="form-control">
+                        <option value="Male">Masculin</option>
+                        <option value="Female">Féminin</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="emailInput">Email : </label>
+                    <input type="email" name="email" id="emailInput" class="form-control" required>
+                </div>
+                <div>
+                    <label for="phoneInput">Téléphone : </label>
+                    <input type="text" name="phone" id="phoneInput" class="form-control" required>
+                </div>
+                <div>
+                    <label for="countryInput">Pays : </label>
+                    <input type="text" name="country" id="countryInput" class="form-control" required>
+                </div>
+            </div>
+            <div class="card-footer">
+            <div class="text-right">
+                <button type="submit" class="btn btn-light" id="addButton">Ajouter</button>
+                <button type="button" class="btn btn-light" id="cancelButton">Annuler</button>
+            </div>
+            </div>
+        </div>
+    </form>
+</div>
 </body>
 
 </html>
